@@ -3,14 +3,16 @@ using System;
 using HebianGu.Demo.EFCore.MoveDBForMySql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HebianGu.Demo.EFCore.MoveDBForMySql.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190514100845_onebyone")]
+    partial class onebyone
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,18 +101,6 @@ namespace HebianGu.Demo.EFCore.MoveDBForMySql.Migrations
                     b.ToTable("RelationShips");
                 });
 
-            modelBuilder.Entity("HebianGu.Demo.EFCore.MoveDBForMySql.School", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Schools");
-                });
-
             modelBuilder.Entity("HebianGu.Demo.EFCore.MoveDBForMySql.Student", b =>
                 {
                     b.Property<int>("Id")
@@ -126,22 +116,6 @@ namespace HebianGu.Demo.EFCore.MoveDBForMySql.Migrations
                         .IsUnique();
 
                     b.ToTable("Students");
-                });
-
-            modelBuilder.Entity("HebianGu.Demo.EFCore.MoveDBForMySql.Teacher", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.Property<int>("SchoolID");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SchoolID");
-
-                    b.ToTable("Teachers");
                 });
 
             modelBuilder.Entity("HebianGu.Demo.EFCore.MoveDBForMySql.RelationShip", b =>
@@ -162,14 +136,6 @@ namespace HebianGu.Demo.EFCore.MoveDBForMySql.Migrations
                     b.HasOne("HebianGu.Demo.EFCore.MoveDBForMySql.Desk", "Desk")
                         .WithOne("Student")
                         .HasForeignKey("HebianGu.Demo.EFCore.MoveDBForMySql.Student", "DeskID")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("HebianGu.Demo.EFCore.MoveDBForMySql.Teacher", b =>
-                {
-                    b.HasOne("HebianGu.Demo.EFCore.MoveDBForMySql.School", "School")
-                        .WithMany("Teachers")
-                        .HasForeignKey("SchoolID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

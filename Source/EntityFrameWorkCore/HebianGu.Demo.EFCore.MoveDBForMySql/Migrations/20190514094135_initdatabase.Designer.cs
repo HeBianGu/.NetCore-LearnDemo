@@ -9,14 +9,26 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HebianGu.Demo.EFCore.MoveDBForMySql.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190513110729_changecount")]
-    partial class changecount
+    [Migration("20190514094135_initdatabase")]
+    partial class initdatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
+
+            modelBuilder.Entity("HebianGu.Demo.EFCore.MoveDBForMySql.Child", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Childs");
+                });
 
             modelBuilder.Entity("HebianGu.Demo.EFCore.MoveDBForMySql.City", b =>
                 {
@@ -50,6 +62,44 @@ namespace HebianGu.Demo.EFCore.MoveDBForMySql.Migrations
                             Count = 0,
                             Name = "北京"
                         });
+                });
+
+            modelBuilder.Entity("HebianGu.Demo.EFCore.MoveDBForMySql.Parent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Parents");
+                });
+
+            modelBuilder.Entity("HebianGu.Demo.EFCore.MoveDBForMySql.RelationShip", b =>
+                {
+                    b.Property<int>("ChildID");
+
+                    b.Property<int>("ParentID");
+
+                    b.HasKey("ChildID", "ParentID");
+
+                    b.HasIndex("ParentID");
+
+                    b.ToTable("RelationShips");
+                });
+
+            modelBuilder.Entity("HebianGu.Demo.EFCore.MoveDBForMySql.RelationShip", b =>
+                {
+                    b.HasOne("HebianGu.Demo.EFCore.MoveDBForMySql.Child")
+                        .WithMany("RelationShips")
+                        .HasForeignKey("ChildID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("HebianGu.Demo.EFCore.MoveDBForMySql.Parent")
+                        .WithMany("RelationShips")
+                        .HasForeignKey("ParentID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
