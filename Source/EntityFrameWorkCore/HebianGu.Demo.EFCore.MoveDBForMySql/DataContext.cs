@@ -17,13 +17,11 @@ namespace HebianGu.Demo.EFCore.MoveDBForMySql
 
             //  Do：一对一关系模型
             modelBuilder.Entity<Student>().HasOne(l => l.Desk).WithOne(l => l.Student)
-                .HasForeignKey<Student>(l => l.DeskID);  
-
+                .HasForeignKey<Student>(l => l.DeskID); 
 
             //  Do：一对多关系模型
             modelBuilder.Entity<Teacher>().HasOne(l => l.School).WithMany(l => l.Teachers)
                 .HasForeignKey(l => l.SchoolID); 
-
 
             //  Do：多对多配置联合主键    
             modelBuilder.Entity<RelationShip>().HasKey(l => new {l.ChildID, l.ParentID});
@@ -35,7 +33,6 @@ namespace HebianGu.Demo.EFCore.MoveDBForMySql
             modelBuilder.Entity<RelationShip>().HasOne(l => l.Parent).WithMany(l => l.RelationShips)
                 .HasForeignKey(l => l.ParentID); 
 
-
             //  Do：设置种子数据
             modelBuilder.Entity<City>().HasData(
                 new City{Id = 1,Name = "成都"}, new City {Id =5,Name = "北京" });
@@ -44,15 +41,12 @@ namespace HebianGu.Demo.EFCore.MoveDBForMySql
         
         public  DbSet<City> Citys { get; set; } 
 
-
         public  DbSet<Parent> Parents { get; set; }
         public DbSet<Child> Childs { get; set; }
-
-
         public  DbSet<RelationShip> RelationShips { get; set; }
+
         public  DbSet<Student> Students { get; set; }
         public DbSet<Desk> Desks { get; set; }
-
 
         public  DbSet<Teacher> Teachers { get; set; }
         public DbSet<School> Schools { get; set; }
