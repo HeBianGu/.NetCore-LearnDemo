@@ -10,7 +10,7 @@ namespace HebianGu.Demo.EFCore.MoveDBForMySql
         {
             //  Do：注册链接字符串   
             optionsBuilder.UseMySQL("server=localhost;userid=root;pwd=123456;port=3306;database=test;sslmode=none;");
-        }
+        } 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         { 
