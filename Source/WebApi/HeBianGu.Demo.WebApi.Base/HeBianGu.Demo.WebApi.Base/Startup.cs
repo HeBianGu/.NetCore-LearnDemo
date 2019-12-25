@@ -13,7 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace HeBianGu.Demo.WebApi.Swagger
+namespace HeBianGu.Demo.WebApi.Base
 {
     public class Startup
     {
@@ -29,14 +29,17 @@ namespace HeBianGu.Demo.WebApi.Swagger
         {
             services.AddControllers();
 
+            //  Do ：注入服务
+            services.AddSingleton<ICustomService, CustomService>();
+
             // Do:注册Swagger生成器并初始化一个或多个文档
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "HeBianGu Swagger Demo API",
+                    Title = "HeBianGu API Base Demo",
                     Version = "v1",
-                    Description = "Swagger Demo for Asp.net Core 3.0",
+                    Description = "API Base Demo for Asp.net Core 3.0",
                     TermsOfService = new Uri("https://blog.csdn.net/u010975589"),
                     Contact = new OpenApiContact
                     {
@@ -51,7 +54,7 @@ namespace HeBianGu.Demo.WebApi.Swagger
                     }
                 });
 
-                // Do:增加说明文档
+                // Set the comments path for the Swagger JSON and UI.
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
@@ -65,6 +68,8 @@ namespace HeBianGu.Demo.WebApi.Swagger
             {
                 app.UseDeveloperExceptionPage();
             }
+
+           
 
             // Do:启用中间件服务Swagger
             app.UseSwagger();

@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HeBianGu.Demo.WebApi.Base</name>
+    </assembly>
+    <members>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.CustomController.GetAll">
+            <summary>
+            获取列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.CustomController.Get(System.String)">
+            <summary>
+            获取指定项
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.CustomController.Create(HeBianGu.Demo.WebApi.Base.CustomEntity)">
+            <summary>
+            创建实例
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.CustomController.Update(System.String,HeBianGu.Demo.WebApi.Base.CustomEntity)">
+            <summary>
+            修改实例
+            </summary>
+            <param name="id"></param>
+            <param name="bookIn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.CustomController.Delete(System.String)">
+            <summary>
+            删除实例
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.CustomController.GetFormat(System.String)">
+            <summary>
+            限制返回格式
+            </summary>
+            <remarks>
+            /api/GetFormat/5	默认输出格式化程序
+            /api/GetFormat/5.json JSON 格式化程序（如配置）
+            /api/GetFormat/5.xml XML 格式化程序（如配置）
+            </remarks>
+            <param name="id"> 5 /5.json /5.xml </param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.WeatherForecastController.GetAll">
+            <summary>
+            Get的默认方式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.WeatherForecastController.GetByID(System.String)">
+            <summary>
+            Get的传递参数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.WeatherForecastController.GetByID(System.String,System.String)">
+            <summary>
+            Get的传递多个参数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.WeatherForecastController.GetSummary(HeBianGu.Demo.WebApi.Base.WeatherForecast)">
+            <summary>
+            Post传递Body
+            </summary>
+            <param name="model">模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.WeatherForecastController.DeleteByID(System.String)">
+            <summary>
+            Post传递参数
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.WeatherForecastController.AddBy(System.String,System.String)">
+            <summary>
+            Post传递多个参数
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.WeatherForecastController.GetResult">
+            <summary>
+            Post传递多个参数
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

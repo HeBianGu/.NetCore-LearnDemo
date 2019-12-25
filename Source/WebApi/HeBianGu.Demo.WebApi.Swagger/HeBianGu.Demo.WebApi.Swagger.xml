@@ -4,5 +4,32 @@
         <name>HeBianGu.Demo.WebApi.Swagger</name>
     </assembly>
     <members>
+        <member name="M:HeBianGu.Demo.WebApi.Swagger.Controllers.WeatherForecastController.GetAll">
+            <summary>
+            获取全部数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Swagger.Controllers.WeatherForecastController.GetByID(System.String)">
+            <summary>
+            获取数据
+            </summary>
+            <param name="id">主键ID</param>
+            <returns> 返回数据 </returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Swagger.Controllers.WeatherForecastController.GetSummary(HeBianGu.Demo.WebApi.Swagger.WeatherForecast)">
+            <summary>
+            获取Summary
+            </summary>
+            <param name="model">模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Swagger.Controllers.WeatherForecastController.DeleteByID(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
