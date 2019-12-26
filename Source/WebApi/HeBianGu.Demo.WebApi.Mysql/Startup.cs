@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace HeBianGu.Demo.WebApi.Base
+namespace HeBianGu.Demo.WebApi.Mysql
 {
     public class Startup
     {
@@ -29,8 +30,8 @@ namespace HeBianGu.Demo.WebApi.Base
         {
             services.AddControllers();
 
-            //  Do ：注入服务
-            services.AddSingleton<ICustomService, CustomService>();
+            //  Do ：注入数据库上下文
+            services.AddDbContext<MysqlDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"))); 
 
             // Do:注册Swagger生成器并初始化一个或多个文档
             services.AddSwaggerGen(c =>
@@ -59,8 +60,6 @@ namespace HeBianGu.Demo.WebApi.Base
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,7 +70,6 @@ namespace HeBianGu.Demo.WebApi.Base
                 app.UseDeveloperExceptionPage();
             }
 
-           
 
             // Do:启用中间件服务Swagger
             app.UseSwagger();

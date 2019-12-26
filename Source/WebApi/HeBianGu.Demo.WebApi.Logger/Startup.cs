@@ -13,7 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace HeBianGu.Demo.WebApi.Base
+namespace HeBianGu.Demo.WebApi.Logger
 {
     public class Startup
     {
@@ -28,9 +28,6 @@ namespace HeBianGu.Demo.WebApi.Base
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
-            //  Do ：注入服务
-            services.AddSingleton<ICustomService, CustomService>();
 
             // Do:注册Swagger生成器并初始化一个或多个文档
             services.AddSwaggerGen(c =>
@@ -60,7 +57,15 @@ namespace HeBianGu.Demo.WebApi.Base
                 c.IncludeXmlComments(xmlPath);
             });
 
-
+            //  Do ：设置日志
+            services.AddLogging(builder =>
+            {
+                builder
+                    .AddConfiguration(Configuration.GetSection("Logging"))
+                    .AddFilter("Microsoft", LogLevel.Warning)
+                    .AddFilter(Assembly.GetExecutingAssembly().GetName().Name, LogLevel.Debug)
+                    .AddConsole();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,7 +76,6 @@ namespace HeBianGu.Demo.WebApi.Base
                 app.UseDeveloperExceptionPage();
             }
 
-           
 
             // Do:启用中间件服务Swagger
             app.UseSwagger();

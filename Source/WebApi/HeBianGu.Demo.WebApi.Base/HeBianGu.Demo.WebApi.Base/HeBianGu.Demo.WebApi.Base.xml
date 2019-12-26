@@ -51,6 +51,18 @@
             <param name="id"> 5 /5.json /5.xml </param>
             <returns></returns>
         </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.LogController.RunLog(System.String)">
+            <summary>
+            写运行日志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.LogController.ErrorLog(System.String)">
+            <summary>
+            写错误日志
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:HeBianGu.Demo.WebApi.Base.Controllers.WeatherForecastController.GetAll">
             <summary>
             Get的默认方式

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeBianGu.Demo.WebApi.Logger", "..\..\Source\WebApi\HeBianGu.Demo.WebApi.Logger\HeBianGu.Demo.WebApi.Logger.csproj", "{7F55E310-1A0E-4597-8332-7B92A0AF1EF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F55E310-1A0E-4597-8332-7B92A0AF1EF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F55E310-1A0E-4597-8332-7B92A0AF1EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F55E310-1A0E-4597-8332-7B92A0AF1EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F55E310-1A0E-4597-8332-7B92A0AF1EF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C6C4FB8-CC30-4227-969B-BDF7038BED50}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HeBianGu.Demo.WebApi.Logger</name>
+    </assembly>
+    <members>
+        <member name="M:HeBianGu.Demo.WebApi.Logger.Controllers.LogController.RunLog(System.String)">
+            <summary>
+            写运行日志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.Logger.Controllers.LogController.ErrorLog(System.String)">
+            <summary>
+            写错误日志
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
