@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HeBianGu.Demo.WebApi.RESTful</name>
+    </assembly>
+    <members>
+        <member name="M:HeBianGu.Demo.WebApi.RESTful.Controllers.CustomController.GetAll">
+            <summary>
+            获取列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.RESTful.Controllers.CustomController.Get(System.String)">
+            <summary>
+            获取指定项
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.RESTful.Controllers.CustomController.Create(HeBianGu.Demo.WebApi.RESTful.CustomEntity)">
+            <summary>
+            创建实例
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.RESTful.Controllers.CustomController.Update(System.String,HeBianGu.Demo.WebApi.RESTful.CustomEntity)">
+            <summary>
+            修改实例
+            </summary>
+            <param name="id"></param>
+            <param name="bookIn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.Demo.WebApi.RESTful.Controllers.CustomController.Delete(System.String)">
+            <summary>
+            删除实例
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeBianGu.Demo.WebApi.Base", "..\..\Source\WebApi\HeBianGu.Demo.WebApi.Base\HeBianGu.Demo.WebApi.Base\HeBianGu.Demo.WebApi.Base.csproj", "{0E2ECA83-5B20-4E17-8B1C-213D2F010600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeBianGu.Demo.WebApi.Mysql", "..\..\Source\WebApi\HeBianGu.Demo.WebApi.Mysql\HeBianGu.Demo.WebApi.Mysql.csproj", "{84676991-0304-4E1D-B19D-507CEF0F49B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeBianGu.Demo.WebApi.Mysql", "..\..\Source\WebApi\HeBianGu.Demo.WebApi.Mysql\HeBianGu.Demo.WebApi.Mysql.csproj", "{84676991-0304-4E1D-B19D-507CEF0F49B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeBianGu.Demo.WebApi.RESTful", "..\..\Source\WebApi\HeBianGu.Demo.WebApi.RESTful\HeBianGu.Demo.WebApi.RESTful.csproj", "{976F7891-2CD6-4681-AFC8-1E92EDEB8F13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeBianGu.Demo.WebApi.Sqlite", "..\..\Source\WebApi\HeBianGu.Demo.WebApi.Sqlite\HeBianGu.Demo.WebApi.Sqlite.csproj", "{9202E010-6808-4DD2-B96D-8F7384ED7B3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{84676991-0304-4E1D-B19D-507CEF0F49B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84676991-0304-4E1D-B19D-507CEF0F49B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84676991-0304-4E1D-B19D-507CEF0F49B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{976F7891-2CD6-4681-AFC8-1E92EDEB8F13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{976F7891-2CD6-4681-AFC8-1E92EDEB8F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{976F7891-2CD6-4681-AFC8-1E92EDEB8F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{976F7891-2CD6-4681-AFC8-1E92EDEB8F13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9202E010-6808-4DD2-B96D-8F7384ED7B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9202E010-6808-4DD2-B96D-8F7384ED7B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9202E010-6808-4DD2-B96D-8F7384ED7B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9202E010-6808-4DD2-B96D-8F7384ED7B3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
